@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>   
+</head>  
+<body><center><i>
+
+  <form action="" method="POST"> 
+    {% csrf_token %} 
+    <br>  
+    <div>  
+    <div>  
+    <h3>Enter Details</h3>  
+    </div>  
+  </div>
+  </div>  
+  <div >  
+    <label >Book Name:</label>  
+    <div >  
+      {{ form1.name }}  
+    </div>  
+  </div>  
+    <div >  
+    <label >Author:</label>  
+    <div >  
+      {{ form1.author }}  
+    </div>  
+  </div>  
+    <div>  
+    <label>Category:</label>  
+    <div>  
+      {{ form1.category }}  
+    </div>  
+  </div>  
+    <div >  
+    <div >  
+    <button type="submit">ADD</button>
+    </div>  
+  </div>
+  </div>
+</form>
+<br>
+<br>
+<div>
+  <form action="/home/" method="get"> 
+      <button type="submit">HOME</button>
+    </form>
+</div>
+</center>
+</i>
+</body>  
+</html>  

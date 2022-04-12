@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+    </head>
+    <body><center>
+        <h2>HOME PAGE</h2>
+
+        {% if not user.is_authenticated %}
+
+        <form action="signup/" method="get">
+            <input type="submit" value="SIGNUP">
+        </form>
+        <br>
+        <br>
+        <form action="login/" method="get">
+            <input type="submit" value="LOGIN">
+        </form>
+
+        {% else %}
+
+        <form action="/logout/" method="get">
+            {% csrf_token %}
+            <input type="submit" value="LOGOUT">
+        </form>
+        <center>
+        <br>
+        <br>
+        <div>
+            <div>
+                <form action="/addbook/" method="get"> 
+                    <button type="submit">Add Book To Library</button>
+                  </form>
+              </div>
+              <br>
+              <br>
+              <div>
+                <form action="/viewbook/" method="get"> 
+                    <button type="submit">View Available Book</button>
+                  </form>
+              </div>
+          </div>
+     </table>                
+            </form>
+        </div>
+
+        {% endif %}
+    </center>
+    </body>
+</html>

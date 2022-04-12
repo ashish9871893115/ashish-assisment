@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <body><center><i>
+    <div>
+      <form action="/home/" method="get"> 
+          <button type="submit">HOME</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <h3 >Available Book in Library</h3>
+    <form action="/viewbook/" method="post">
+    <table>  
+      <thead>  
+      <tr> 
+        <th>Book Name |</th>
+        <th>Author |</th> 
+        <th>Category |</th>
+      </tr>  
+      </thead>  
+      <tbody>  
+  {% for employees in books %}  
+      <tr>
+
+          <td>{{ employees.name }}</td>  
+          <td>{{ employees.author }}</td>  
+          <td>{{ employees.category }}</td>  
+          <td> <a href="/delete/{{employees.id}}">Delete</a></td>  
+         </tr>  
+        {% endfor %}
+      </tbody>  
+  </table> 
+</form>
+<form method="get" action="/addbook/">
+      {% csrf_token %}
+      <br>
+        <button type="submit" />Add Books</button>
+      </form>
+      
+    </center>
+  </i></body>
+</html>
